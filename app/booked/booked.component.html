@@ -1,0 +1,109 @@
+<div class="container mt-2" id="toprint">
+   
+    <h4 style="color: #636468;text-align: center;
+    ">APPOINTMENT BOOKED</h4><br>
+    
+    <!-- Name : {{full_name}}<br>
+    Mobile Number : {{mobile_number}}<br>
+    Age : {{age}}<br>
+    Gender : {{gender}}<br>
+    Doctor : {{docs1[z-1].name}}<br>
+    Description : {{describe_problem_in_few_words}}<br>
+    Date : {{date}}<br>
+    Slot : {{slots}}<br> -->
+
+
+    <table align="center" border="1px solid black" style="width:80%" bgcolor="#eee" >
+        <tr style="text-align:center">
+          <th>Patient Details</th>
+          <th>Values</th>
+         
+        </tr>
+        <tr style="text-align:center">
+          <td>Name</td>
+          <td> {{full_name}}</td>
+          
+        </tr>
+        <tr style="text-align:center">
+            <td>Mobile Number</td>
+            <td>  {{mobile_number}}</td>
+            
+          </tr>
+
+          <tr style="text-align:center">
+            <td> Age</td>
+            <td>  {{age}}</td>
+            
+          </tr>
+          <tr style="text-align:center">
+            <td> Gender</td>
+            <td> {{gender}}</td>
+            
+          </tr>
+          <tr style="text-align:center">
+            <td> Doctor</td>
+            <td> {{docs1[z-1].name}}</td>
+            
+          </tr>
+          <tr style="text-align:center">
+            <td> Description</td>
+            <td> {{describe_problem_in_few_words}}</td>
+            
+          </tr>
+         <tr style="text-align:center">
+            <td> Date</td>
+            <td>{{date}}</td>
+            
+          </tr>
+          <tr style="text-align:center">
+            <td>  Slot</td>
+            <td>{{slots}}</td>
+            
+          </tr>
+      </table>
+
+      
+
+
+</div>
+
+
+<!-- <div class="container mb-5 mt-2 text-center">
+    <button type="button" class="btn btn-primary" onclick="printFunction()">Print</button>
+    </div> -->
+    <div class="container mb-5 mt-2 text-center">
+      <button type="button" class="btn btn-primary" (click)="printit()">Print</button>
+      </div>
+    <script>
+        //   function printFunction() { 
+        //     var divContents = document.getElementById("toprint").innerHTML;
+        //         var prnt = window.open('', '', 'height=500, width=500');
+        //          prnt.document.write(divContents);
+        //         prnt .document.close();
+        //         prnt .print();
+        //   }
+    
+    
+    
+          function printFunction1() { 
+              var doc=new jsPDF('l','pt');
+              var appnt_pdf=document.querySelector('#toprint');
+            var divContents = document.getElementById("toprint").innerHTML;
+                // var prnt = window.open('', '', 'height=500, width=500');
+                 // prnt.document.write(divContents);
+                // prnt .document.close();
+                // prnt .print();
+                doc.fromHTML(appnt_pdf,15,15);
+                doc.save('appointment.pdf');
+    
+                // await html2canvas(downloading,{
+                    // allowTaint:true,
+                    // useCORS:true,
+                    // width:550
+                // }).then((canvas)=>{
+                    // doc.addImage(canvas.toDataURL('image/png','PNG',5,5,500,500))
+                // })
+                // doc.save('doc.pdf');
+    
+          }
+    </script>

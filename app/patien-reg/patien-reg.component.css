@@ -1,0 +1,13 @@
+ul{
+   
+    margin: 0 auto;
+}
+
+
+form
+{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}

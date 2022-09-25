@@ -1,0 +1,135 @@
+<!-- <p>logged works!</p> -->
+<!-- {{doctor}} -->
+<!-- <hr /> -->
+<!-- {{doctor}} -->
+<!-- <li *ngFor="let user of patint"> -->
+    <!-- <span>{{user.full_name}}-{{user.describe_problem_in_few_words}}--{{user.date}}--{{user.slots}} </span> -->
+<!-- </li> -->
+
+<!-- <li *ngFor="let dates of unique"> -->
+    <!-- <span>{{dates}} </span> -->
+<!-- </li> -->
+<!-- <li *ngFor="let s of slot"> -->
+    <!-- <span>{{s}} </span> -->
+<!-- </li> -->
+
+<!-- table -->
+
+<div class="container mt-5">
+
+    <table class="table table-secondary table-hover table-bordered border-dark">
+
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col" class="text-center">Slot 1</th>
+                <th scope="col" class="text-center">Slot 2</th>
+                <th scope="col" class="text-center">Slot 3</th>
+                <th scope="col" class="text-center">Slot 4</th>
+            </tr>
+        </thead>
+
+
+        <!-- {{user.date}}=={{date}}) && ( {{user.slots}}=={{s}} -->
+
+        <tbody>
+            <tr *ngFor="let dates of unique">
+                <th scope="row">{{dates}}</th>
+                <!--date-->
+                <td *ngFor="let s of slot" id="tag dates s">
+                    <div *ngFor="let user of patint">
+                        <div *ngIf="identifiantsAreEqual(user.date,user.slots,s,dates);else elseBlock" class="text-center">
+                           
+                            {{user.full_name | change:true}}
+                            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="open( user)">Details</button>
+                            
+                            
+                            <!--  -->
+
+
+                        </div>
+                        <ng-template #elseBlock>
+                            <div>
+                                
+                            </div>
+                        </ng-template>
+
+                    </div>
+
+
+                </td>
+
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+
+
+
+
+
+<!--  
+
+<div class="container mt-5">
+
+    <table class="table table-secondary table-hover table-bordered border-dark">
+    
+      <thead >
+        <tr>
+          <th scope="col"></th>
+          <th scope="col" class="text-center">Slot 1</th>
+          <th scope="col" class="text-center">Slot 2</th>
+          <th scope="col" class="text-center">Slot 3</th>
+          <th scope="col" class="text-center">Slot 4</th>
+        </tr>
+      </thead>
+    
+    
+    
+      <tbody>
+      {% for x in dt %}
+      <tr>
+    
+         <th scope="row" >{{x}}</th>
+        {% for y in slt%}
+    
+          <td id="tag {{x}} {{y}}" style="background: #dc3545;color: #FFFFFF;"><div class="text-center">   None
+    
+             {% for z in mymembers %}
+    
+             {% if z.date == x and z.slots == y %}
+    
+             <script type="text/javascript">
+      document.getElementById("tag {{x}} {{y}}").innerHTML = "<div class='text-center'>{{z.full_name}}</div>"; 
+      var element=document.getElementById("tag {{x}} {{y}}");
+      element.style.background="#90b842";
+      element.style.color="white";
+    
+     </script> 
+             {% endif %} 
+    
+     {% endfor %} 
+    
+    
+    
+          </div>
+           </td>
+    
+           
+    
+    
+    
+          {% endfor %}
+         
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    </div>
+
+-->

@@ -1,0 +1,94 @@
+<div class="container">
+    <h3 class="text-center mt-3">Book Appointment</h3>
+
+
+    <div class="">
+
+        <form #userForm="ngForm" (ngSubmit)="onSubmitapt()" class="">
+            <div class="row">
+                <div class="form-group mt-3 col-md">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Name" name="name"
+                        [(ngModel)]="pntAptdt.full_name">
+                </div>
+                <div class="form-group mt-3 col-md">
+                    <label for="mob">Mobile number</label>
+                    <input type="text" class="form-control" id="mob" placeholder="Mobile number" name="mob"
+                        [(ngModel)]="pntAptdt.mobile_number" required="true">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group mt-3 col-md">
+                    <!-- <label for="age">Age</label>
+                    <input type="text" class="form-control" id="mob" placeholder="Age" name="age" [(ngModel)]="pntAptdt.age"> -->
+
+                    <label for="Age" class="form-label">Age</label>
+                    <input type="range" class="form-range" id="Age" min="0" max="100" step="1" name="Age" value=0 [(ngModel)]="pntAptdt.age">
+                    <small>{{pntAptdt.age}}</small>
+                </div>
+                <div class="form-group mt-3 col-md text-center">
+                    <label class="mt-4 me-2" for="gender">Gender</label>
+                    <select class="custom-select my-1 mr-sm-2" id="gender" [(ngModel)]="pntAptdt.gender" name="gender">
+                        <option selected value="m">Male</option>
+                        <option value="f">Female</option>
+                        <option value="o">Other</option>
+
+                    </select>
+                </div>
+                <div class="row">
+                    <div class="form-group mt-3 col-md">
+                        <label for="DescribeYourProblem" [(ngModel)]="pntAptdt.describe_problem_in_few_words">Describe
+                            Your Problem </label>
+                        <textarea class="form-control" id="DescribeYourProblem" rows="2" name="DescribeYourProblem"
+                             [(ngModel)]="pntAptdt.describe_problem_in_few_words"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group mt-5 col-md">
+                        <label class=" me-2" for="doctor">Doctor</label>
+                        <select class="custom-select my-1 mr-sm-2" id="doctor" [(ngModel)]="pntAptdt.doctor"
+                            name="doctor">
+                            <option *ngFor="let user of docs1" value="{{user.id}}" >{{user.name}}</option>
+
+                        </select>
+
+                    </div>
+                    <div class="form-group mt-3 col-md">
+                        <label for="Date">Date</label>
+                        <input class="form-control" type="date" id="Date" name="Date" [(ngModel)]="pntAptdt.date">
+
+                    </div>
+                    <div class="form-group mt-5 col-md ms-5">
+                        <button type="button" class="btn btn-primary btn-sm ms-4" (click)="checkAvailability()">Check slot availability</button>
+
+                    </div>
+                    <div class="form-group mt-5 col-md text-center">
+                        <label class=" me-2  " for="slots">Slot</label>
+                        <select class="custom-select my-1 mr-sm-2" id="slots" [(ngModel)]="pntAptdt.slots" name="slots">
+                            <option *ngFor="let x of avSlots" value="{{x}}" > Slot{{x}}</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+                <div class="row mt-3 mb-5">
+                    <div class="col-md">
+                        <button class="btn btn-primary" type="submit">Submit form</button>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div *ngFor="let x of avSlots">
+    {{x}}
+
+</div>
+

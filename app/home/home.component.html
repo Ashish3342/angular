@@ -1,0 +1,117 @@
+<div class="ntxt">
+    <span class="ntxt" style="font-size: 24px;">
+        <h4>
+            <marquee>Welcome to Balco Medical Centre</marquee>
+        </h4>
+    </span>
+</div>
+
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="./assets/img/hos1.jpg" class="d-block w-100  " style="width:auto;height:400px;" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="./assets/img/hos2.jpg" class="d-block w-100 h-30" style="width:100%;height:400px;" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="./assets/img/hos3.jpg" class="d-block w-100 h-30" style="width:100%;height:400px" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="./assets/img/hos4.jpg" class="d-block w-100 h-30" style="width:100%;height:400px" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid " style="background-color:#eee">
+    <h3 class="text-center mt-5" id="doc-text"><span class="txt" style="font-size: 32px;">OUR DOCTORS</span></h3>
+    <div class="row">
+        <div class="owl-carousel owl-theme" id="owl">
+
+
+
+            <!-- {%for x in doc%} -->
+
+
+
+            <div class="row">
+                <div class="col-md" *ngFor="let user of docs1">
+                    <div class="card ">
+                        <!-- {% with a=x.image.url %} -->
+
+                        <img src="./assets/img/doc.jpeg" class="card-img-top mx-auto" alt='x.name'
+                            style="border-radius: 50%;width:160px;height:160px;">
+                        <div class="card-body">
+                            <h5 class="card-title text-center"><span class="txt" style="font-size: 18px;">
+                                    Dr.{{user.name}}</span></h5>
+                            <p class="card-text text-center"><span class="txt"
+                                    style="font-size: 16px;">{{user.profile}}</span>
+                            </p>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-primary text-center"> Book appointment</a>
+                            </div>
+                        </div>
+                        <!-- {% endwith%} -->
+                    </div>
+                </div>
+                <!-- {%endfor%} -->
+            </div>
+
+
+            
+
+
+            <!--  -->
+
+        </div>
+    </div>
+
+
+</div>
+
+<div class="container-fluid" style="background-color:#eee">
+    <h3 class="text-center mt-5" id="doc-text"><span class="txt" style="font-size: 32px;">OUR SPECIALITIES</span></h3>
+    <ul class="list-group list-group-horizontal d-flex justify-content-center w-75 mx-auto">
+
+        <li class="list-group-item"><img class="img-fluid " src="./assets/img/balco1.png" onclick='collapsefunc()'></li>
+        <li class="list-group-item"><img class="img-fluid" src="./assets/img/balco2.png" onclick='collapsefunc1()'></li>
+        <li class="list-group-item"><img class="img-fluid" src="./assets/img/balco3.png" onclick='collapsefunc2()'></li>
+        <li class="list-group-item"><img class="img-fluid" src="./assets/img/balco4.png" onclick='collapsefunc3()'></li>
+        <li class="list-group-item"><img class="img-fluid" src="./assets/img/balco5.png" onclick='collapsefunc4()'></li>
+        <li class="list-group-item"><img class="img-fluid" src="./assets/img/balco6.png" onclick='collapsefunc5()'></li>
+        <li class="list-group-item"><img class="img-fluid" src="./assets/img/balco7.png" onclick='collapsefunc6()'></li>
+    </ul>
+
+
+    <div class="container-fluid " id="speciality-text">
+        <div class="alert alert-light " role="alert" id='innertext' style="font-size: 16px; font: sans-serif;">
+            At Balco Medical Centre, our vision is to be the most well regarded healthcare provider in India committed
+            to the highest standards of clinical excellence and patient care, supported by latest technology and cutting
+            edge research.<br>We ask more of ourselves, so we can give more to our patients. We push the boundaries of
+            excellence in everything we do, so we can deliver the highest standards in patient-centred care.<br>
+
+        </div>
+    </div>
+
+</div>

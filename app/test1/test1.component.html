@@ -1,0 +1,88 @@
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color:#eee">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="./assets/img/balco_logo.png" alt="" width="200" height="50" class="d-inline-block align-text-top ">
+  
+      </a>
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item my-2">
+            <a class="nav-link" aria-current="page" routerLink="/home"><span class="txt">
+                <h5>Home</h5>
+              </span></a>
+          </li>
+          <li class="nav-item my-2">
+            <a class="nav-link" routerLink="/about"><span class="txt">
+                <h5> About</h5>
+              </span></a>
+          </li>
+          <li class="nav-item my-2 me-md-2">
+            <a class="nav-link" routerLink="/contact"><span class="txt">
+                <h5>Contact</h5>
+              </span></a>
+          </li>
+  
+  
+          <!-- {% if user.is_authenticated %} -->
+          <li class="nav-item my-2 me-md-2" *ngIf="doctor!=''">
+            <span class="nav-link">
+              <h5> Welocome Dr. {{doctor}}</h5>
+            </span>
+  
+          </li>
+          <li class="nav-item my-2" *ngIf="doctor!=''">
+            <a class="btn btn-primary me-lg-3 mb-xs-3 mb-lg-0" (click)="logMeout()"  role="button" >Logout</a>
+  
+          </li>
+  
+  
+  
+  
+  
+  
+          <!-- {% else %} -->
+  
+          <li class="nav-item my-2" *ngIf="doctor==''">
+            <div class="text-center">
+              <a class="btn btn-primary me-lg-3 mb-xs-3 mb-lg-0" routerLink="/docform" role="button">Doctor Login</a>
+            </div>
+          </li>
+  
+  
+          <li class="nav-item my-2" *ngIf="doctor==''">
+            <div class="text-center">
+              <a class="btn btn-primary me-lg-3 mb-xs-3 mb-lg-0" routerLink="/patient" role="button">Book
+                Appointment</a>
+            </div>
+          </li>
+          <!-- {%endif%} -->
+  
+        </ul>
+  
+        <!-- <ul class="navbar-nav ms-auto"> -->
+        <!-- <li>  -->
+  
+        <!-- <a class="btn btn-primary me-lg-3 mb-xs-3 mb-lg-0" href="{% url 'logger' %}" role="button">Doctor Login</a> -->
+  
+        <!-- </li> -->
+        <!-- <li> -->
+        <!-- <a class="btn btn-primary me-lg-3 mb-xs-3 mb-lg-0" href="{% url 'form' %}" role="button">Book Appointment</a> -->
+  
+        <!-- </li> -->
+  
+  
+  
+  
+        <!-- </ul> -->
+      </div>
+  
+    </div>
+  </nav>
+  
+  <!-- navbar end -->

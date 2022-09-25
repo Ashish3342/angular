@@ -1,0 +1,12 @@
+form
+{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.txt{
+    color: #636468;
+    text-align: center;
+}

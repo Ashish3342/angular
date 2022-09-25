@@ -1,0 +1,71 @@
+Ashish@3342
+<h4 class=" text-center my-3 "><span class="txt" style="font-size: 24px"> LOG IN</span></h4>
+
+
+
+        <!-- <div class="mb-3 row">
+
+            <label for="user" class="col-sm-6 col-form-label text-center "><span class="txt" style="font-size: 18px">
+                    User
+                    ID</span></label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control form-control text-primary" id="user" name="user"
+                    placeholder="email@example.com" required [(ngModel)]="logData.userid">
+            </div>
+
+        </div>
+
+        <div class="mb-3 row">
+            <label for="pass" class="col-sm-6 col-form-label text-center"><span class="txt"
+                    style="font-size: 18px">Password</span></label>
+            <div class="col-sm-6">
+                <input type="Password" class="form-control form-control text-primary" id="pass" name="pass"
+                    placeholder="" required [(ngModel)]="logData.password">
+                <div id="emailHelp" class="form-text">must contain A-Z , a-z, 0-9 and special character</div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="text-center">
+                   
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <button type="submit my-3" class="btn btn-primary" id="btn">Enter</button>
+            </div>
+        </div>
+
+
+
+    </form>
+</div> --> 
+
+
+
+
+<div class="container">
+    <div class=" text-center" id="/patient">
+        <form #userForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="email">Email or username</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                    placeholder="Email or username" required [(ngModel)]="logData.userid" name="email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small>
+            </div>
+            <div class="form-group mt-3">
+                <label for="pass">Password</label>
+                <input type="password" class="form-control" id="pass" placeholder="Password" name="pass" [(ngModel)]="logData.password">
+            </div>
+            <div class="form-group form-check mt-3">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" required >
+                <label class="form-check-label" for="exampleCheck1"> Remember me</label>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form>
+
+    </div>
+</div>
+
